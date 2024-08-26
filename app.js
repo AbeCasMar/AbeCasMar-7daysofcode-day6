@@ -1,4 +1,3 @@
-
 var frutas =[];
 var verduras =[];
 var congelados =[];
@@ -64,35 +63,44 @@ if(editar = "si"){
     
                 articulo = prompt("Escribe el articulo que seseas eliminar.");
                 categoria = prompt("Escribe la categoria")
+                if(categoria.includes(articulo)){
+
+                    switch(categoria){
     
-                switch(categoria){
-    
-                    case "frutas":
-                        indice = frutas.indexOf(articulo);
-                        eliminado = frutas.splice(indice,1);
-                        alert(`Se elimino de la lista: ${eliminado}`);
-                        break
-        
-                    case "verduras":
-                        indice = verduras.indexOf(articulo);
-                        eliminado = verduras.splice(indice,1);
-                        alert(`Se elimino de la lista: ${eliminado}`);
-                        break
-        
-                    case "congelados":
-                        indice = congelados.indexOf(articulo);
-                        eliminado = congelados.splice(indice,1);
-                        alert(`Se elimino de la lista: ${eliminado}`);
-                        break
-        
-                    case "dulces":
-                        indice = dulces.indexOf(articulo);
-                        eliminado = dulces.splice(indice,1);
-                        alert(`Se elimino de la lista: ${eliminado}`);
-                        break
-            }
-            break
-    
+                        case "frutas":
+                            indice = frutas.indexOf(articulo);
+                            eliminado = frutas.splice(indice,1);
+                            alert(`Se elimino de la lista: ${eliminado}`);
+                            break
+            
+                        case "verduras":
+                            indice = verduras.indexOf(articulo);
+                            eliminado = verduras.splice(indice,1);
+                            alert(`Se elimino de la lista: ${eliminado}`);
+                            break
+            
+                        case "congelados":
+                            indice = congelados.indexOf(articulo);
+                            eliminado = congelados.splice(indice,1);
+                            alert(`Se elimino de la lista: ${eliminado}`);
+                            break
+            
+                        case "dulces":
+                            indice = dulces.indexOf(articulo);
+                            eliminado = dulces.splice(indice,1);
+                            alert(`Se elimino de la lista: ${eliminado}`);
+                            break
+                    } 
+
+                }
+                else{
+
+                    alert(`El articulo ${articulo} no se encuentra en la lista.`)
+
+                }
+                   
+                break    
+                                
         }
 
         editar = prompt("Para seguir editando la lista escribe si o escribe no para terminar");
@@ -137,4 +145,3 @@ alert(`Lista de compras:
         Dulces: ${dulces}
 
         `);
-
